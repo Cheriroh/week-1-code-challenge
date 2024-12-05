@@ -19,7 +19,7 @@ Links to an external site.-  Links to an external site.Links to an external site
  Have node js installed on your machine 
  Clone the repository git clone  <--this is the ssh code -->
 run each file in node js `node salary.js` do the same for each file
-### Author:Eng.Newton Manyisa
+### Author:Prudence Chepkorir
 If you encounter any issues with my code or need assistance, don't hesitate to raise a flag or seek help
 #### contact 
 email ..<prudencec2019@gmail.com> 

@@ -79,8 +79,12 @@ function calculateNetSalary(basicSalary, benefits) {
 }
 
 // Example usage
-const basicSalary = 110000; 
-const benefits = 40000; 
+//const basicSalary = 100000; 
+//const benefits = 30000; 
+
+ //User Input (uncomment to use)
+ const basicSalary = parseFloat(prompt("Enter Basic Salary: "));
+ const benefits = parseFloat(prompt("Enter Benefits: "));
 
 // Calculate salary details
 const salaryDetails = calculateNetSalary(basicSalary, benefits);
