@@ -5,6 +5,8 @@
 
 //let mark = prompt("Input student marks (0 - 100)")
 function studentGrading(mark) {
+
+    
     if (mark > 79 && mark <= 100) {
         return "A";
     } else if (mark >= 60 && mark <= 79) {
@@ -20,11 +22,16 @@ function studentGrading(mark) {
     }
 }
 
+
+
 // Prompt the user for input
 let markInput = prompt("Input student marks (0 - 100):");
 
 // Convert the input to a number
 let mark = Number(markInput);
+
+
+
 
 // Check if the input is a valid number and display the grade
 if (isNaN(mark)) {
