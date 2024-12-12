@@ -6,7 +6,7 @@
    //> For example, if the speed is 80, it should print: “Points: 2”. 
    //If the driver gets more than 12 points, the function should print: “License suspended”.
 
-   function speeChecker(speed) {
+   function speedChecker(speed) {
       let speedLimit = 70;
       let kmforeachDemeritPoint = 5;//For every 5 km/s over the speed limit which is 70, you get 1 demerit  point
   
@@ -23,8 +23,8 @@
   }
   
   // Example of my speed check
-  console.log(speeChecker(50)); // Output: "ok "" because 50 is below the  speedlimit"
-  console.log(speeChecker(130)); // output: 12 demerit points
-  console.log(speeChecker(90)); 
-  console.log(speeChecker(160));
-  console.log(speeChecker(500));//license suspended because the points are more the 12
+  console.log(speedChecker(50)); // Output: "ok "" because 50 is below the  speedlimit"
+  console.log(speedChecker(130)); // output: 12 demerit points
+  console.log(speedChecker(90)); 
+  console.log(speedChecker(160));
+  console.log(speedChecker(500));//license suspended because the points are more the 12
