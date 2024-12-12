@@ -6,32 +6,25 @@
    //> For example, if the speed is 80, it should print: “Points: 2”. 
    //If the driver gets more than 12 points, the function should print: “License suspended”.
 
-   function studentGrading(mark) {
-    if (mark > 79 && mark <= 100) {
-        return "A";
-    } else if (mark >= 60 && mark <= 79) {
-        return "B";
-    } else if (mark >= 50 && mark <= 59) {
-        return "C";
-    } else if (mark >= 40 && mark <= 49) {
-        return "D";
-    } else if (mark >= 0 && mark < 40) {
-        return "E";
-    } else {
-        return "Invalid input. Marks should be between 0 and 100.";
-    }
-}
-
-// Prompt the user for input
-let markInput = prompt("Input student marks (0 - 100):");
-
-// Convert the input to a number
-let mark = Number(markInput);
-
-// Check if the input is a valid number and display the grade
-if (isNaN(mark)) {
-    alert("Invalid input. Please enter a number.");
-} else {
-    let grade = studentGrading(mark);
-    alert(`The grade for marks ${mark} is: ${grade}`);
-}
+   function speeChecker(speed) {
+      let speedLimit = 70;
+      let kmforeachDemeritPoint = 5;//For every 5 km/s over the speed limit which is 70, you get 1 demerit  point
+  
+      if (speed <= speedLimit) { //if you speed is bellow 70 or equal to 70 you are safe 
+          return "Ok";
+      } else {
+          const points = Math.floor((speed - speedLimit) / kmforeachDemeritPoint); //exapmle ((130-70)/5)=12 points demerit points
+          if (points > 12) {
+              return "License suspended";
+          } else {
+              return `Points: ${points}`;
+          }
+      }
+  }
+  
+  // Example of my speed check
+  console.log(speeChecker(50)); // Output: "ok "" because 50 is below the  speedlimit"
+  console.log(speeChecker(130)); // output: 12 demerit points
+  console.log(speeChecker(90)); 
+  console.log(speeChecker(160));
+  console.log(speeChecker(500));//license suspended because the points are more the 12
