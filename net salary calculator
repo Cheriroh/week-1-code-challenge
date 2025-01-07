@@ -1,10 +1,13 @@
-
 //Write a program whose major task is to calculate an individual’s Net Salary by getting the inputs 
 //of basic salary and benefits. Calculate the payee (i.e. Tax), NHIF Deductions, NSSF Deductions, gross salary, and net salary. 
+
 //NB: Use KRA, NHIF, and NSSF values provided in the link below.
 //- https://www.aren.co.ke/payroll/taxrates.htm Links to an external site.
 //Links to an external site.-  Links to an external site.Links to an external site.
 //- www.kra.go.ke/en/individual/calculate-tax/calculating-tax/paye
+
+
+
 function calculateNetSalary(basicSalary, benefits) {
     // thisare the Constants and thresholds
     const personalRelief = 2400; //this is the  Monthly personal relief
@@ -95,10 +98,13 @@ function calculateNetSalary(basicSalary, benefits) {
 //User Input
 const basicSalary = parseFloat(prompt("Enter Basic Salary: "));
 const benefits = parseFloat(prompt("Enter Benefits: "));
+
 // this are  the results of the above example the i tried
 const salaryDetails = calculateNetSalary(basicSalary, benefits);
+
 console.log("Gross Salary:", salaryDetails.grossSalary);
 console.log("PAYE:", salaryDetails.PAYE);
 console.log("NHIF:", salaryDetails.NHIF);
 console.log("NSSF:", salaryDetails.NSSF);
 console.log("Net Salary:", salaryDetails.netSalary);
+// i used jsfiddle to test code functionallity
