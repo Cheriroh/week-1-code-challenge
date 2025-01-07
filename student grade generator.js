@@ -1,36 +1,29 @@
-//Write a function that prompts the user to input student marks. 
-//The input should be between 0 and 100.
-//The output should correspond the correct grade, as shown below: 
-//A > 79, B - 60 to 79, C - 59 to 49, D - 40 to 49, E - less 40
+function calculateGrade() {
+    // Get user input for student marks
+const marks = parseFloat(prompt("Enter student marks (between 0 and 100):"));
 
-let mark = prompt("Input student marks (0 - 100)")
-//const mark=()
- studentGrading(mark);
- 
-function studentGrading(mark){
-
-if (mark>79 && mark<=100){
-return "A";
-} 
-else if(mark>=60 && mark<=79){
-return "B";
-} 
-else if(mark>=49 && mark<=59){
-return "C";
-} 
-else if(mark>=40 && mark<=49){
-return "D";
-} 
-else if(mark<=40){
-return "E";
-} 
-else{
-return "invalid"
+  // Check if the input is within the valid range
+  if (isNaN(marks) || marks < 0 || marks > 100) {
+    return "Invalid input. Marks should be between 0 and 100.";
 }
 
-} 
+  // Determine the grade 
+  if (marks > 79) {
+    return "Grade: A";
+} else if (marks >= 60 && marks <= 79) {
+    return "Grade: B";
+} else if (marks >= 50 && marks <= 59) {
+    return "Grade: C";
+} else if (marks >= 40 && marks <= 49) {
+    return "Grade: D";
+} else {
+    return "Grade: E";
+}
 
+}
 
+const testMarks = 75
+console.log(calculateGrade(testMarks));
 
-console.log(studentGrading(mark));
-
+// console.log(calculateGrade());
+//i used jsfiddle to test the functionality of the code 
