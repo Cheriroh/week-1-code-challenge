@@ -1,30 +1,35 @@
+function speedChecker(speed) {
+    const speedLimit = 70; // Speed limit
+    const kmPerDemeritPoint = 5; // For every 5 km/s over the speed limit, 1 demerit point is given
 
-//Write a program that takes the speed of a car as input e.g 80. 
-//If the speed is less than 70, it should print “Ok”. Otherwise, for every 5 km/s above the speed limit (70),
-// it should give the driver one demerit point and print the total number of demerit points.
+    if (speed <= speedLimit) {
+        return "Ok"; // If the speed is within the limit
+    } else {
+        const points = Math.floor((speed - speedLimit) / kmPerDemeritPoint); // Calculate demerit points
+        if (points > 12) {
+            return "License suspended"; // If points exceed 12, license is suspended
+        } else {
+            return `Points: ${points}`; // Otherwise, return the number of demerit points
+        }
+    }
+}
 
-   //> For example, if the speed is 80, it should print: “Points: 2”. 
-   //If the driver gets more than 12 points, the function should print: “License suspended”.
+// Function to prompt the user for speed entry
+function promptForSpeed() {
+    let speed;
+    do {
+        speed = prompt("Enter the speed of the car (e.g., 80):");
+        speed = Number(speed); // Convert input to a number
+    } while (isNaN(speed) || speed < 0); // Ensure valid input (non-negative number)
+    return speed;
+}
 
-   function speedChecker(speed) {
-      let speedLimit = 70;
-      let kmforeachDemeritPoint = 5;//For every 5 km/s over the speed limit which is 70, you get 1 demerit  point
-  
-      if (speed <= speedLimit) { //if you speed is bellow 70 or equal to 70 you are safe 
-          return "Ok";
-      } else {
-          const points = Math.floor((speed - speedLimit) / kmforeachDemeritPoint); //exapmle ((130-70)/5)=12 points demerit points
-          if (points > 12) {
-              return "License suspended";
-          } else {
-              return `Points: ${points}`;
-          }
-      }
-  }
-  
-  // Example of my speed check
-  console.log(speedChecker(50)); // Output: "ok "" because 50 is below the  speedlimit"
-  console.log(speedChecker(130)); // output: 12 demerit points
-  console.log(speedChecker(90)); 
-  console.log(speedChecker(160));
-  console.log(speedChecker(500));//license suspended because the points are more the 12
+// Main execution
+const speed = promptForSpeed(); // Get speed from the user
+const result = speedChecker(speed); // Check the speed and calculate the result
+
+// Display the result
+console.log(`Speed: ${speed}`);
+console.log(result);
+alert(`Speed: ${speed}\n${result}`);
+// i used jsfiddle to test the code functionality
